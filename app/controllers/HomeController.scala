@@ -25,4 +25,8 @@ class HomeController @Inject() extends Controller {
     Ok("World")
   }
 
+  def show(id: String) = Action {
+    Ok(id)
+  }
+
 }
