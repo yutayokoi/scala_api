@@ -29,4 +29,16 @@ class HomeController @Inject() extends Controller {
     Ok(id)
   }
 
+  def additional = Action {
+    Ok("additional")
+      .withHeaders(
+        CACHE_CONTROL -> "max-age=3600",
+        ETAG -> "xx"
+      )
+      .withSession(
+        "connected" -> "hoge",
+        "foo" -> "bar"
+      )
+      .as(JSON)
+  }
 }
